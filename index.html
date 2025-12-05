@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered Dino Runner - Watch neural networks learn to play through evolution">
+    <title>AI Dino Runner - NEAT Evolution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🦖 AI Dino Runner</h1>
+            <p class="subtitle">Watch neural networks evolve and master the game</p>
+        </header>
+
+        <!-- Control Panel -->
+        <div class="control-panel">
+            <div class="controls-left">
+                <button id="startBtn" class="btn btn-primary">
+                    <span class="btn-icon">▶</span>
+                    Start Training
+                </button>
+                <button id="pauseBtn" class="btn btn-secondary" disabled>
+                    <span class="btn-icon">⏸</span>
+                    Pause
+                </button>
+                <button id="resetBtn" class="btn btn-danger">
+                    <span class="btn-icon">↻</span>
+                    Reset
+                </button>
+            </div>
+            
+            <div class="controls-right">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="showBestCheckbox" checked>
+                    <span class="checkmark"></span>
+                    Highlight Best
+                </label>
+                <label class="speed-control">
+                    Speed:
+                    <select id="speedSelect">
+                        <option value="1">1x</option>
+                        <option value="2">2x</option>
+                        <option value="5">5x</option>
+                        <option value="10">10x</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="stats-panel">
+            <div class="stat-card">
+                <div class="stat-label">Generation</div>
+                <div class="stat-value" id="generationStat">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Alive</div>
+                <div class="stat-value" id="aliveStat">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Best Score</div>
+                <div class="stat-value" id="bestScoreStat">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Best Fitness</div>
+                <div class="stat-value" id="bestFitnessStat">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Avg Fitness</div>
+                <div class="stat-value" id="avgFitnessStat">0</div>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="1000" height="400"></canvas>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="info-panel">
+            <h3>🧠 How It Works</h3>
+            <ul>
+                <li><strong>NEAT Algorithm:</strong> Each dino has a neural network brain that evolves over generations</li>
+                <li><strong>Inputs:</strong> Distance to obstacle, obstacle height, dino position, game speed</li>
+                <li><strong>Output:</strong> Jump or don't jump</li>
+                <li><strong>Evolution:</strong> Best performers survive, their "genes" combine and mutate to create the next generation</li>
+                <li><strong>Learning:</strong> Fitness = survival time + score. Dinos that survive longer pass on their traits</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="neat.js"></script>
+    <script src="game.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
