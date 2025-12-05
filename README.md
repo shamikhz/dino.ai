@@ -71,6 +71,3 @@ You only need a modern web browser (Chrome, Firefox, Edge, Safari) to run this p
 - **Vanilla JavaScript (ES6+)**: Core logic for both the game and the AI.
 - **CSS3**: Modern, responsive UI styling.
 
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
